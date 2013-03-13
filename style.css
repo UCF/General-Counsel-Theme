@@ -5,7 +5,7 @@ Github Theme URI: https://github.com/UCF/General-Counsel-Theme.git
 Version: v0.0.0
 */
 
-
+/* Home/general styles */
 #header { border-bottom: 1px solid #dedede; }
 #below-the-fold, #footer { border-top: 1px solid #dedede; }
 
@@ -33,4 +33,8 @@ Version: v0.0.0
 	color: #ccc;
 }
 
-#footer { }
+#footer { margin-bottom: 50px; }
+
+
+/* Page styles */
+.sidebarnav { padding-bottom: 5px; border-bottom: 1px solid #dedede; }
