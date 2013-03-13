@@ -123,17 +123,28 @@ function sc_person_picture_list($atts) {
 	$org_groups		= ($atts['org_groups']) ? $atts['org_groups'] : null;
 	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
 	$join			= ($atts['join']) ? $atts['join'] : 'or';
-	$people 		= sc_object_list(
-						array(
-							'type' => 'person', 
-							'limit' => $limit,
-							'join' => $join,
-							'categories' => $categories, 
-							'org_groups' => $org_groups
-						), 
-						array(
-							'objects_only' => True,
-						));
+	
+	$args 			= array(
+						'post_type' 	 => 'person',
+						'posts_per_page' => $limit,
+						'tax_query' 	 => array(
+							'relation' 		=> $join,
+							array(
+								'taxonomy' 		=> 'org_groups',
+								'field' 		=> 'slug',
+								'terms' 		=> $org_groups,
+							),
+							array(
+								'taxonomy' 		=> 'category',
+								'field' 		=> 'slug',
+								'terms' 		=> $categories,
+							),
+						),
+						'meta_key'		=> 'person_orderby_name',		
+						'orderby'		=> 'meta_value',
+						'order'			=> 'ASC',
+					);
+	$people			= get_posts($args);
 	
 	ob_start();
 	
@@ -144,15 +155,9 @@ function sc_person_picture_list($atts) {
 		$image_url = get_featured_image_url($person->ID);
 		
 		$link = ($person->post_content != '') ? True : False;
-		if( ($count % $row_size) == 0) {
-			if($count > 0) {
-				?></div><?
-			}
-			?><div class="row"><?
-		}
 		
 		?>
-		<div class="span2 person-picture-wrap">
+		<div class="person-picture-wrap">
 			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
 				<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
 				<div class="name"><?=Person::get_name($person)?></div>
@@ -162,7 +167,7 @@ function sc_person_picture_list($atts) {
 		<?
 		$count++;
 	}
-	?>	</div>
+	?>
 	</div>
 	<?
 	return ob_get_clean();
