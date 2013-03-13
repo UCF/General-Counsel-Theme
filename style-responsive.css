@@ -1,3 +1,7 @@
+@media (min-width: 1200px) {
+	.row-border-bottom-top { margin-left: 30px; }
+}
+
 @media (max-width: 979px) {
 	#UCFHBSearch_and_links { display: none; }
 	#UCFHBHeader div.UCFHBWrapper { width: 100%; }

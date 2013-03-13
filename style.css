@@ -5,3 +5,32 @@ Github Theme URI: https://github.com/UCF/General-Counsel-Theme.git
 Version: v0.0.0
 */
 
+
+#header { border-bottom: 1px solid #dedede; }
+#below-the-fold, #footer { border-top: 1px solid #dedede; }
+
+#header-nav-wrap { overflow: visible; }
+#header-nav-wrap .menu.horizontal { float: right; }
+.menu.horizontal { }
+.menu.horizontal li { margin: 0 0 16px 6px; }
+.menu.horizontal li a { color: #000; font-weight: bold; font-size: 14px; }
+
+#header h1 { font-size: 30px; }
+#header h1 a { font-weight: 400; }
+
+#below-the-fold { }
+#below-the-fold #below-the-fold-left { }
+#below-the-fold #below-the-fold-center p { font-family: 'Georgia', serif; font-size: 24px; font-style: italic; color: #2a2a2a; line-height: 32px; }
+#below-the-fold #below-the-fold-center p span { 
+	font-family: 'Helvetica', sans-serif; 
+	font-size: 80px; 
+	font-style: normal; 
+	line-height: 80px;
+	display: block; 
+	height: 32px;
+	float: left; 
+	padding-right: 10px; 
+	color: #ccc;
+}
+
+#footer { }
