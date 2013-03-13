@@ -5,17 +5,16 @@
 ?>
 <?php get_header(); the_post();?>
 	<div class="row page-content" id="<?=$post->post_name?>">
+		<div id="sidebar" class="span3">
+			Affixed nav will go here...
+		</div>
 		<div class="span9">
 			<article>
 				<? if(!is_front_page())	{ ?>
-						<h1><?php the_title();?></h1>
+						<h2><?php the_title();?></h2>
 				<? } ?>
 				<?php the_content();?>
 			</article>
-		</div>
-		
-		<div id="sidebar" class="span3">
-			<?=get_sidebar();?>
 		</div>
 	</div>
 	<?
