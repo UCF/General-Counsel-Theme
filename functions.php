@@ -9,4 +9,10 @@ require_once('shortcodes.php');         		# Per theme shortcodes
 
 //Add theme-specific functions here.
 
+
+/**
+* Allow shortcodes in widgets
+**/
+add_filter('widget_text', 'do_shortcode');
+
 ?>

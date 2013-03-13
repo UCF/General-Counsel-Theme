@@ -353,4 +353,56 @@ function sc_post_type_search($params=array(), $content='') {
 	return ob_get_clean();
 }
 add_shortcode('post-type-search', 'sc_post_type_search');
+
+
+/**
+ * Output site contact info.
+ *
+ * @return string
+ * @author Jo Greybill
+ **/
+function sc_contact_info($attrs) {
+	$location = $attrs['location'];
+	$options = get_option(THEME_OPTIONS_NAME);
+	
+	switch ($location) {
+		case $options['location_name_1']:
+		default:
+			$locationnum = 1;
+			break;
+		case $options['location_name_2']:
+			$locationnum = 2;
+			break;
+	}
+	
+	$output = '';
+		
+	$output .= '<span class="location-name-'.$locationnum.'"><strong>'.$options['location_name_'.$locationnum].'</strong></span>';
+	if($options['location_address_'.$locationnum]) { $output .= '<br/><span class="location-address-'.$locationnum.'">'.nl2br($options['location_address_'.$locationnum]).'</span>'; }
+	if($options['location_phone_'.$locationnum]) { $output .= '<br/><span class="location-phone-'.$locationnum.'">'.$options['location_phone_'.$locationnum].'</span>'; }
+	if($options['location_fax_'.$locationnum]) { $output .= '<br/><span class="location-fax-'.$locationnum.'">'.$options['location_fax_'.$locationnum].' fax</span>'; }
+		
+	return $output;
+}
+add_shortcode('site-contact-info', 'sc_contact_info');
+
+
+/**
+ * Output site contact email, as defined in Theme Options.
+ *
+ * @return string
+ * @author Jo Greybill
+ **/
+function sc_contact_email() {
+	$options = get_option(THEME_OPTIONS_NAME);
+	ob_start();
+	
+	if($options['site_contact']) { 
+		print '<a class="contact-email" href="mailto:'.$options['site_contact'].'">'.$options['site_contact'].'</a>'; 
+	}
+	else { print 'No site contact email provided.'; }
+	
+	return ob_get_clean(); 
+}
+add_shortcode('site-contact-email', 'sc_contact_email');
 ?>

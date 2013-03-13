@@ -16,13 +16,6 @@ function __init__(){
 	register_nav_menu('header-menu', __('Header Menu'));
 	register_nav_menu('footer-menu', __('Footer Menu'));
 	register_sidebar(array(
-		'name'          => __('Sidebar'),
-		'id'            => 'sidebar',
-		'description'   => 'Sidebar found on two column page templates and search pages',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-	));
-	register_sidebar(array(
 		'name'          => __('Below the Fold - Left'),
 		'id'            => 'bottom-left',
 		'description'   => 'Left column on the bottom of pages, after flickr images if enabled.',
