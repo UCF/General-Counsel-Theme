@@ -37,4 +37,15 @@ Version: v0.0.0
 
 
 /* Page styles */
-.sidebarnav { padding-bottom: 5px; border-bottom: 1px solid #dedede; }
+.title-sidebarnav { margin-top: 25px; padding-bottom: 5px; border-bottom: 1px solid #dedede; }
+
+
+/* Post type output styles */
+.person-picture-list { margin: 20px 0; }
+.person-picture-wrap { overflow: auto; }
+.person-picture-wrap .person-img { float: left; padding: 0 20px 20px 0; }
+.person-picture-wrap .person-info { }
+.person-picture-wrap .person-info h4 { margin-top: 0; margin-bottom: 5px; }
+.person-picture-wrap .person-info h4 .name { }
+.person-picture-wrap .person-info h4 .title { font-weight: 400; }
+.person-picture-wrap .person-info .email a { text-decoration: underline; }

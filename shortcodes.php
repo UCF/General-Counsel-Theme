@@ -117,8 +117,6 @@ add_shortcode('publication', 'sc_publication');
 
 
 function sc_person_picture_list($atts) {
-	$atts['type']	= ($atts['type']) ? $atts['type'] : null;
-	$row_size 		= ($atts['row_size']) ? (intval($atts['row_size'])) : 5;
 	$categories		= ($atts['categories']) ? $atts['categories'] : null;
 	$org_groups		= ($atts['org_groups']) ? $atts['org_groups'] : null;
 	$limit			= ($atts['limit']) ? (intval($atts['limit'])) : -1;
@@ -152,17 +150,27 @@ function sc_person_picture_list($atts) {
 	$count = 0;
 	foreach($people as $person) {
 		
-		$image_url = get_featured_image_url($person->ID);
-		
+		$image_url = (get_featured_image_url($person->ID)) ? get_featured_image_url($person->ID) : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg';
+		$title = get_post_meta($person->ID, 'person_jobtitle', true);
 		$link = ($person->post_content != '') ? True : False;
+		$email = get_post_meta($person->ID, 'person_email', true);
 		
 		?>
 		<div class="person-picture-wrap">
-			<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
-				<img src="<?=$image_url ? $image_url : get_bloginfo('stylesheet_directory').'/static/img/no-photo.jpg'?>" />
-				<div class="name"><?=Person::get_name($person)?></div>
-				<div class="title"><?=get_post_meta($person->ID, 'person_jobtitle', True)?></div>
-				<? if($link) {?></a><?}?>
+			<div class="person-img">
+				<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
+				<img src="<?=$image_url?>" />
+				<? if($link) {?></a><? } ?>
+			</div>
+			<div class="person-info">
+				<h4>
+				<? if($link) {?><a href="<?=get_permalink($person->ID)?>"><? } ?>
+				<span class="name"><?=Person::get_name($person)?><? if ($title != '') { ?></span><span class="title">, <?=$title?></span><? } else { ?></span><? } ?>
+				<? if($link) {?></a><? } ?>
+				</h4>
+				<? if ($email != '') { ?><p class="email"><i class="icon-envelope"></i> <a href="mailto:<?=$email?>"><?=$email?></a></p><? } ?>
+				<? if($link) {?><div class="bio"><?=apply_filters('the_content', $person->post_content);?></div><? } ?>
+			</div>
 		</div>
 		<?
 		$count++;
