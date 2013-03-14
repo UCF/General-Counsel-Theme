@@ -386,6 +386,9 @@ function sc_contact_info($attrs) {
 		case $options['location_name_2']:
 			$locationnum = 2;
 			break;
+		case $options['location_name_3']:
+			$locationnum = 3;
+			break;
 	}
 	
 	$output = '';

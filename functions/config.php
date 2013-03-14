@@ -176,7 +176,7 @@ Config::$theme_settings = array(
 			'default'     => 'http://events.ucf.edu',
 		)),
 	),
-	'Site' => array(
+	'Contact Information' => array(
 		new TextField(array(
 			'name'        => 'Contact Email',
 			'id'          => THEME_OPTIONS_NAME.'[site_contact]',
@@ -203,7 +203,7 @@ Config::$theme_settings = array(
 			'id'          => THEME_OPTIONS_NAME.'[location_address_1]',
 			'description' => 'The address of this location.',
 			'value'       => $theme_options['location_address_1'],
-			'default'	  => '4000 Central Florida Blvd.&#13;&#10;Millican Hall, Suite 360&#13;&#10;Orlando, FL  32816-0015',
+			'default'	  => '',
 		)),
 		new TextField(array(
 			'name'        => 'Location 1 Phone Number',
@@ -231,7 +231,7 @@ Config::$theme_settings = array(
 			'id'          => THEME_OPTIONS_NAME.'[location_address_2]',
 			'description' => 'The address of this location.',
 			'value'       => $theme_options['location_address_2'],
-			'default'	  => '12201 Research Pkwy.&#13;&#10;Suite 501&#13;&#10;Orlando, FL  32826',
+			'default'	  => '',
 		)),
 		new TextField(array(
 			'name'        => 'Location 2 Phone Number',
@@ -246,6 +246,34 @@ Config::$theme_settings = array(
 			'description' => 'The fax number for this location.',
 			'value'       => $theme_options['location_fax_2'],
 			'default'	  => '407.823.3299',
+		)),
+		new TextField(array(
+			'name'        => 'Location 3 Name',
+			'id'          => THEME_OPTIONS_NAME.'[location_name_3]',
+			'description' => 'The name of your organization\'s location.',
+			'value'       => $theme_options['location_name_3'],
+			'default'	  => 'College of Medicine',
+		)),
+		new TextareaField(array(
+			'name'        => 'Location 3 Address',
+			'id'          => THEME_OPTIONS_NAME.'[location_address_3]',
+			'description' => 'The address of this location.',
+			'value'       => $theme_options['location_address_3'],
+			'default'	  => '',
+		)),
+		new TextField(array(
+			'name'        => 'Location 3 Phone Number',
+			'id'          => THEME_OPTIONS_NAME.'[location_phone_3]',
+			'description' => 'The phone number for this location.',
+			'value'       => $theme_options['location_phone_3'],
+			'default'	  => '',
+		)),
+		new TextField(array(
+			'name'        => 'Location 3 Fax',
+			'id'          => THEME_OPTIONS_NAME.'[location_fax_3]',
+			'description' => 'The fax number for this location.',
+			'value'       => $theme_options['location_fax_3'],
+			'default'	  => '',
 		)),
 	),
 	'Social' => array(
