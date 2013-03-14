@@ -110,11 +110,13 @@ Config::$custom_post_types = array(
 	'Publication',
 	'Page',
 	'Person',
-	'Post'
+	'Post',
+	'FrequentlyAskedQuestion'
 );
 
 Config::$custom_taxonomies = array(
-	'OrganizationalGroups'
+	'OrganizationalGroups',
+	'FAQGroups'
 );
 
 Config::$body_classes = array('default',);

@@ -679,4 +679,21 @@ class Post extends CustomPostType {
 		);
 	}
 }
+
+class FrequentlyAskedQuestion extends CustomPostType{
+	public 
+		$name           = 'faq',
+		$plural_name    = 'FAQs',
+		$singular_name  = 'FAQ',
+		$add_new_item   = 'Add New FAQ',
+		$edit_item      = 'Edit FAQ',
+		$new_item       = 'New FAQ',
+		$public         = True,
+		$use_editor     = True,
+		$use_order      = True,
+		$use_metabox    = False,
+		$use_title      = True,
+		
+		$taxonomies     = array('faq_groups');	
+}
 ?>

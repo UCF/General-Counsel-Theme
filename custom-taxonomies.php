@@ -110,4 +110,29 @@ class OrganizationalGroups extends CustomTaxonomy
 		$hierarchical = True;
 } // END class 
 
+
+/**
+ * Describes groups of FrequentlyAskedQuestions
+ *
+ * @author Jo Greybill
+ **/
+class FAQGroups extends CustomTaxonomy
+{
+	public
+		$name               = 'faq_groups',
+		$general_name       = 'FAQ Groups',
+		$singular_name      = 'FAQ Group',
+		$search_items       = 'Search FAQ Groups',
+		$popular_items      = 'Popular FAQ Groups',
+		$all_times          = 'All FAQ Groups',
+		$parent_item        = 'Parent FAQ Group',
+		$parent_item_colon  = 'Parent FAQ Group:',
+		$edit_item          = 'Edit FAQ Group',
+		$update_item        = 'Update FAQ Group',
+		$add_new_item       = 'Add New FAQ Group',
+		$new_item_name      = 'New FAQ Group',
+		
+		$hierarchical = True;
+} // END class 
+
 ?>
