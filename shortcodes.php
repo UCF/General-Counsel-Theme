@@ -418,4 +418,21 @@ function sc_contact_email() {
 	return ob_get_clean(); 
 }
 add_shortcode('site-contact-email', 'sc_contact_email');
+
+
+/**
+ * Create a page subheader (h3) that correlates to an item that is
+ * dynamically added to a sidebar.
+ *
+ * Essentially, all this shortcode does is offer an easy way
+ * for users to specify an anchor on the page without much
+ * HTML knowledge.
+ *
+ * @return string
+ * @author Jo Greybill
+ **/
+function sc_sidebar_subheader($atts, $content = null) {
+	return '<h3 class="title-sidebarnav" id="'.sanitize_title($content).'">'.do_shortcode($content).'</h3>';
+}
+add_shortcode('sidebar-subheader', 'sc_sidebar_subheader');
 ?>

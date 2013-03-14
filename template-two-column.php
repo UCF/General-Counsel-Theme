@@ -6,7 +6,15 @@
 <?php get_header(); the_post();?>
 	<div class="row page-content" id="<?=$post->post_name?>">
 		<div id="sidebar" class="span3">
-			Affixed nav will go here...
+		<!--
+			    <ul class="span3 nav nav-tabs nav-stacked">
+					<li><a href="#">Link 1 <i class="icon-chevron-right pull-right"></i></a></li>
+					<li><a href="#">Link 2 <i class="icon-chevron-right pull-right"></i></a></li>
+					<li><a href="#">Link 3 <i class="icon-chevron-right pull-right"></i></a></li>
+    			</ul>
+				-->
+				
+			<?=create_sidebar_nav($post->ID);?>	
 		</div>
 		<div class="span9">
 			<article>

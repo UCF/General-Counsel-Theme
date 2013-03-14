@@ -91,7 +91,7 @@
 		padding: 0;
 	}
 	.navbar ul#header-menu { border-bottom: 0; width: 100%; margin-bottom: 15px; }
-	.navbar ul#header-menu li { margin: 5px 0 !important; }
+	.navbar ul#header-menu li { margin: 10px 0 !important; }
 	.navbar ul#header-menu li:after {
 		content: "";
 	}
