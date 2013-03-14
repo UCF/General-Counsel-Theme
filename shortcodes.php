@@ -435,4 +435,65 @@ function sc_sidebar_subheader($atts, $content = null) {
 	return '<h3 class="title-sidebarnav" id="'.sanitize_title($content).'">'.do_shortcode($content).'</h3>';
 }
 add_shortcode('sidebar-subheader', 'sc_sidebar_subheader');
+
+
+/**
+ * Displays a list of FAQs by FAQGroup
+ *
+ *		[faqs group="Housing and Campus Life"]
+ *
+ **/
+function sc_faqs($attr) {		
+	$group_name 	= @$attr['group'];
+	$group_id		= get_term_by('name', $group_name, 'faq_groups') ? get_term_by('name', $group_name, 'faq_groups')->term_id : 'faq-group-all';
+	$args			= array(
+		'post_type'		=> 'faq',
+		'numberposts'	=> -1,
+		'order'			=> 'ASC',
+		'orderby'		=> 'name',
+	);
+	// if a group is specified, add on a taxonomy array to $args
+	if ($group_id !== 'faq-group-all') {
+		$tax_array = array(
+			'tax_query' 	=> array(
+				array(
+					'taxonomy' 	=> 'faq_groups',
+					'field' 	=> 'id',
+					'terms' 	=> $group_id,
+				)
+			),
+		);
+		$args = array_merge($args, $tax_array);
+	}
+	// get the faqs
+	$faqs 			= get_posts($args);
+	
+	if (count($faqs) < 1){ 
+		return 'No FAQs found.'; 
+	}
+	else {	
+		ob_start(); ?>
+		
+		<div class="accordion" id="faqgroup-<?=$group_id?>">
+			<?php foreach ($faqs as $faq) { ?>
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" href="#faq-<?=$faq->ID?>" data-parent="#faqgroup-<?=$group_id?>" data-toggle="collapse"><?=$faq->post_title?></a>
+				</div>
+				<div class="accordion-body collapse" id="faq-<?=$faq->ID?>">
+					<div class="accordion-inner">
+						<?=apply_filters('the_content', $faq->post_content)?>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
+		</div>	
+		
+		<?php
+		$html = ob_get_clean();
+		return $html;
+	}
+	
+}
+add_shortcode('faqs', 'sc_faqs');
 ?>
