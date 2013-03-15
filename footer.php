@@ -17,7 +17,7 @@
 								<a class="ignore-external" href="http://www.ucf.edu"><img src="<?=THEME_IMG_URL?>/logo.png" alt="" title="" /></a>
 							<?php endif;?>
 						</div>
-						<div class="footer-widget-2 span3">
+						<div class="footer-widget-2 span4">
 							<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Footer - Column Two')):?>
 								<?php $options = get_option(THEME_OPTIONS_NAME);?>
 								<?php if($options['site_contact'] or $options['organization_name']):?>
@@ -35,27 +35,31 @@
 								<div class="copyright">&copy; University of Central Florida</div>
 							<?php endif;?>
 						</div>
-						<div class="footer-widget-3 span3">
+						<div class="footer-widget-3 span3 offset2">
 							<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Footer - Column Three')):?>
-							&nbsp;
-							<?php endif;?>
-						</div>
-						<div class="footer-widget-4 span3">
-							<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Footer - Column Four')):?>
 								<div id="contact-widget">
 									<div class="contact-widget-icon" id="contact-widget-phone">
-										<div class="contact-widget-bubble">
-											<p>Some content will go here...</p>
+										<div class="contact-widget-bubble-wrap">
+											<div class="contact-widget-bubble">
+												<strong class="contact-widget-title">Phone</strong>
+												<p>Some content will go here...</p>
+											</div>
 										</div>
 									</div>
 									<div class="contact-widget-icon" id="contact-widget-map">
-										<div class="contact-widget-bubble">
-											<p>Some content will go here...</p>
+										<div class="contact-widget-bubble-wrap">
+											<div class="contact-widget-bubble">
+												<strong class="contact-widget-title">Map</strong>
+												<p>Some content will go here...</p>
+											</div>
 										</div>
 									</div>
 									<div class="contact-widget-icon" id="contact-widget-email">
-										<div class="contact-widget-bubble">
-											<p>Some content will go here...</p>
+										<div class="contact-widget-bubble-wrap">
+											<div class="contact-widget-bubble">
+												<strong class="contact-widget-title">Email</strong>
+												<p>Some content will go here...</p>
+											</div>
 										</div>
 									</div>
 								</div>
