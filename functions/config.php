@@ -171,11 +171,18 @@ Config::$theme_settings = array(
 	),
 	'Contact Information' => array(
 		new TextField(array(
-			'name'        => 'Contact Email',
+			'name'        => 'Primary Contact Email',
 			'id'          => THEME_OPTIONS_NAME.'[site_contact]',
 			'description' => 'Contact email address that visitors to your site can use to contact you.',
 			'value'       => $theme_options['site_contact'],
 			'default'	  => 'gcounsel@ucf.edu',
+		)),
+		new TextField(array(
+			'name'        => 'Primary Contact Phone',
+			'id'          => THEME_OPTIONS_NAME.'[site_phone]',
+			'description' => 'Contact phone number that visitors to your site can use to contact you.',
+			'value'       => $theme_options['site_phone'],
+			'default'	  => '407.823.2482',
 		)),
 		new TextField(array(
 			'name'        => 'Organization Name',

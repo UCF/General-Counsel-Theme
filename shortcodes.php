@@ -422,6 +422,25 @@ function sc_contact_email() {
 }
 add_shortcode('site-contact-email', 'sc_contact_email');
 
+/**
+ * Output site contact email, as defined in Theme Options.
+ *
+ * @return string
+ * @author Jo Greybill
+ **/
+function sc_contact_phone() {
+	$options = get_option(THEME_OPTIONS_NAME);
+	ob_start();
+	
+	if($options['site_phone']) { 
+		print '<a class="contact-phone" href="tel:'.$options['site_phone'].'">'.$options['site_phone'].'</a>'; 
+	}
+	else { print 'No site contact phone number provided.'; }
+	
+	return ob_get_clean(); 
+}
+add_shortcode('site-contact-phone', 'sc_contact_phone');
+
 
 /**
  * Create a page subheader (h3) that correlates to an item that is
