@@ -12,7 +12,7 @@ Version: v0.0.0
 #header-nav-wrap { overflow: visible; }
 #header-nav-wrap .menu.horizontal { float: right; }
 .menu.horizontal { }
-.menu.horizontal li { margin: 0 0 16px 6px; }
+.menu.horizontal li { margin: 0 0 10px 6px; }
 .menu.horizontal li a { color: #000; font-weight: bold; font-size: 14px; }
 
 #header h1 { font-size: 30px; }
@@ -32,6 +32,7 @@ Version: v0.0.0
 	padding-right: 10px; 
 	color: #ccc;
 }
+#below-the-fold-left, #below-the-fold-center, #below-the-fold-right { margin-bottom: 20px; }
 
 #footer { margin-bottom: 50px; }
 
