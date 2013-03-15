@@ -42,7 +42,23 @@
 						</div>
 						<div class="footer-widget-4 span3">
 							<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Footer - Column Four')):?>
-							&nbsp;	
+								<div id="contact-widget">
+									<div class="contact-widget-icon" id="contact-widget-phone">
+										<div class="contact-widget-bubble">
+											<p>Some content will go here...</p>
+										</div>
+									</div>
+									<div class="contact-widget-icon" id="contact-widget-map">
+										<div class="contact-widget-bubble">
+											<p>Some content will go here...</p>
+										</div>
+									</div>
+									<div class="contact-widget-icon" id="contact-widget-email">
+										<div class="contact-widget-bubble">
+											<p>Some content will go here...</p>
+										</div>
+									</div>
+								</div>
 							<?php endif;?>
 						</div>
 					</div>

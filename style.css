@@ -20,6 +20,7 @@ Version: v0.0.0
 
 #below-the-fold { }
 #below-the-fold #below-the-fold-left { }
+#below-the-fold #below-the-fold-left p { margin-bottom: 20px; }
 #below-the-fold #below-the-fold-center p { font-family: 'Georgia', serif; font-size: 24px; font-style: italic; color: #2a2a2a; line-height: 32px; }
 #below-the-fold #below-the-fold-center p span { 
 	font-family: 'Helvetica', sans-serif; 
@@ -35,6 +36,38 @@ Version: v0.0.0
 #below-the-fold-left, #below-the-fold-center, #below-the-fold-right { margin-bottom: 20px; }
 
 #footer { margin-bottom: 50px; }
+#footer .footer-widget-4 { height: 50px; overflow: visible; }
+#footer .footer-widget-4 .contact-widget-icon {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 10px;
+	cursor: pointer;
+	background-image: url('static/img/contact-spritesheet.png');
+	width: 50px;
+	height: 50px;
+}
+#footer .footer-widget-4 #contact-widget-phone { background-position: -4px 0; }
+#footer .footer-widget-4 #contact-widget-phone:hover { background-position: -4px -51px; }
+#footer .footer-widget-4 #contact-widget-map { background-position: -73px 0; }
+#footer .footer-widget-4 #contact-widget-map:hover { background-position: -73px -51px; }
+#footer .footer-widget-4 #contact-widget-email { background-position: -143px 0; } 
+#footer .footer-widget-4 #contact-widget-email:hover { background-position: -143px -51px; } 
+#footer .footer-widget-4 .contact-widget-icon .contact-widget-bubble {
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: -20px;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 20px;
+	width: 200px;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-ms-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+	cursor: default;
+}
+#footer .footer-widget-4 .contact-widget-icon:hover .contact-widget-bubble { opacity: 1; visibility: visible; }
 
 
 /* Page styles */
