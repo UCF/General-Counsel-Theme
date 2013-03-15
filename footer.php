@@ -39,26 +39,30 @@
 							<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Footer - Column Three')):?>
 								<div id="contact-widget">
 									<div class="contact-widget-icon" id="contact-widget-phone">
+										<a href="<?=get_permalink(get_page_by_title('Contact'))?>"></a>
 										<div class="contact-widget-bubble-wrap">
 											<div class="contact-widget-bubble">
 												<strong class="contact-widget-title">Phone</strong>
-												<p>Some content will go here...</p>
+												<p>Primary Phone: <?=do_shortcode('[site-contact-phone]')?></p>
+												<p>(Click for more contact info)</p>
 											</div>
 										</div>
 									</div>
 									<div class="contact-widget-icon" id="contact-widget-map">
+										<a href="<?=get_permalink(get_page_by_title('Contact'))?>"></a>
 										<div class="contact-widget-bubble-wrap">
 											<div class="contact-widget-bubble">
 												<strong class="contact-widget-title">Map</strong>
-												<p>Some content will go here...</p>
+												<p>(Click to view map)</p>
 											</div>
 										</div>
 									</div>
 									<div class="contact-widget-icon" id="contact-widget-email">
+										<?=do_shortcode('[site-contact-email]')?>
 										<div class="contact-widget-bubble-wrap">
 											<div class="contact-widget-bubble">
 												<strong class="contact-widget-title">Email</strong>
-												<p>Some content will go here...</p>
+												<p>Email: <?=do_shortcode('[site-contact-email]')?></p>
 											</div>
 										</div>
 									</div>

@@ -6,7 +6,7 @@ Version: v0.0.0
 */
 
 /* Home/general styles */
-#header { border-bottom: 1px solid #dedede; }
+#header { border-bottom: 1px solid #dedede; margin-bottom: 0; }
 #below-the-fold, #footer { border-top: 1px solid #dedede; }
 
 #header-nav-wrap { overflow: visible; }
@@ -18,7 +18,9 @@ Version: v0.0.0
 #header h1 { font-size: 30px; }
 #header h1 a { font-weight: 400; }
 
-#below-the-fold { }
+.row.page-content { margin-top: 20px; margin-bottom: 20px; }
+
+#below-the-fold { margin-top: 0; }
 #below-the-fold #below-the-fold-left { }
 #below-the-fold #below-the-fold-left p { margin-bottom: 20px; }
 #below-the-fold #below-the-fold-center p { font-family: 'Georgia', serif; font-size: 24px; font-style: italic; color: #2a2a2a; line-height: 32px; }
@@ -44,10 +46,10 @@ Version: v0.0.0
 	display: block;
 	float: left;
 	margin: 0 10px;
-	cursor: pointer;
 	background-image: url('static/img/contact-spritesheet.png');
 	width: 50px;
 	height: 50px;
+	z-index: 1;
 }
 #footer .footer-widget-3 #contact-widget-phone { background-position: -4px 0; }
 #footer .footer-widget-3 #contact-widget-phone:hover { background-position: -4px -51px; }
@@ -55,6 +57,17 @@ Version: v0.0.0
 #footer .footer-widget-3 #contact-widget-map:hover { background-position: -73px -51px; }
 #footer .footer-widget-3 #contact-widget-email { background-position: -143px 0; } 
 #footer .footer-widget-3 #contact-widget-email:hover { background-position: -143px -51px; } 
+
+#footer .footer-widget-3 .contact-widget-icon > a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	text-indent: -9999px;
+}
 
 #footer .footer-widget-3 .contact-widget-icon .contact-widget-bubble-wrap {
 	display: block;
@@ -69,6 +82,7 @@ Version: v0.0.0
 	-ms-transition: opacity 0.2s ease-in-out;
 	transition: opacity 0.2s ease-in-out;
 	cursor: default;
+	z-index: 3;
 }
 #footer .footer-widget-3 .contact-widget-icon:hover .contact-widget-bubble-wrap { 
 	opacity: 1; 
@@ -108,6 +122,13 @@ Version: v0.0.0
 	font-size: 12px;
 	text-align: center;
 }
+#footer .footer-widget-3 .contact-widget-icon .contact-widget-bubble-wrap .contact-widget-bubble a,
+#footer .footer-widget-3 .contact-widget-icon .contact-widget-bubble-wrap .contact-widget-bubble a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#footer .footer-widget-3 #contact-widget-phone .contact-widget-bubble-wrap { top: -60px; }
 
 #footer .footer-widget-3 #contact-widget-email .contact-widget-bubble-wrap { left: -157px; }
 #footer .footer-widget-3 #contact-widget-email .contact-widget-bubble-wrap .contact-widget-bubble:after { left: 175px; }
