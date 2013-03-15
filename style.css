@@ -53,3 +53,14 @@ Version: v0.0.0
 .person-picture-wrap .person-info h4 .name { }
 .person-picture-wrap .person-info h4 .title { font-weight: 400; }
 .person-picture-wrap .person-info .email a { text-decoration: underline; }
+
+.accordion { margin-top: -20px; }
+.accordion .accordion-group { border-top: 1px solid #ffd333; border-right: 0; border-left: 0; border-bottom: 0; border-radius: 0; }
+.accordion .accordion-group:first-child { border-top: 0; }
+.accordion .accordion-heading .accordion-toggle { padding: 8px 3px; color: #000; text-decoration: none; }
+.accordion .accordion-heading .accordion-toggle:hover,
+.accordion .accordion-heading .accordion-toggle:active,
+.accordion .accordion-heading.active .accordion-toggle {
+background: #FFFAE8;
+}
+.accordion .accordion-inner { border-top: 0; }
