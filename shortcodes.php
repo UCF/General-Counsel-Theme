@@ -472,7 +472,7 @@ function sc_faqs($attr) {
 		'post_type'		=> 'faq',
 		'numberposts'	=> -1,
 		'order'			=> 'ASC',
-		'orderby'		=> 'name',
+		'orderby'		=> 'post_date',
 	);
 	// if a group is specified, add on a taxonomy array to $args
 	if ($group_id !== 'faq-group-all') {
@@ -518,4 +518,39 @@ function sc_faqs($attr) {
 	
 }
 add_shortcode('faqs', 'sc_faqs');
+
+
+/**
+ * Returns HTML markup for a link to a page, specified by its title.
+ * A custom post type can be specified (default is 'page').  This parameter
+ * requires the standard name for a post type (not the capitalized 'nicename').
+ *
+ * A custom class for the link can also be specified (default none).
+ *
+ * @return string
+ * @author Jo Greybill
+ **/
+function sc_page_link($atts, $content=null) {
+	$post_title = $atts['title'] ? $atts['title'] : NULL;
+	$post_type = ($atts['post_type'] && post_type_exists($atts['post_type'])) ? $atts['post_type'] : 'page';
+	$css_class = $atts['class'] ? $atts['class'] : NULL;
+	
+	if (!$post_title) { return 'No post title specified.'; } 
+	else {
+		$found_post = get_page_by_title($post_title, 'OBJECT', $post_type);
+		if (!$found_post) { return 'No post found with post type "'.$post_type.'" and title "'.$post_title.'".'; }
+		else {
+			$link = get_permalink($found_post->ID);
+			
+			$output = '<a';
+			if ($css_class) { 
+				$output .= ' class="'.$css_class.'"'; 
+			}
+			$output .= ' href="'.$link.'">'.$content.'</a>';
+			
+			return $output;
+		}
+	}
+}
+add_shortcode('page-link', 'sc_page_link');
 ?>
