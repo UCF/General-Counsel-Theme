@@ -280,6 +280,37 @@ Generic.PostTypeSearch = function($) {
 		});
 }
 
+
+
+mapWidgetResizing = function($) {
+	var iframe = $('iframe'),
+		iframeSrc = iframe.attr('src');
+	if (iframe.length > 0 && iframeSrc.indexOf('map.ucf.edu/widget') > -1) {
+		
+		var resizeWidget = function() {
+			var iframeWidth = iframe.css('width').slice(0, -2),
+			iframeHeight = (iframe.css('height').slice(0, -2) -30); // padding adjustment
+				
+			var queryDims = iframeSrc.match(/width=\d+\&height=\d+\&/);
+			
+			iframe.attr('src', iframeSrc.replace(queryDims, 'width='+iframeWidth+'&height='+iframeHeight+'&'));
+		}
+		
+		// on load
+		resizeWidget();
+		
+		// on window resize (with timeout to prevent a crapload of Map requests)
+		var timeout = false;
+		$(window).resize(function() {
+			if (timeout !== false) {
+				clearTimeout(timeout);
+			}
+			timeout = setTimeout(resizeWidget, 200);
+		});
+	}
+}
+
+
 if (typeof jQuery != 'undefined'){
 	jQuery(document).ready(function($) {
 		Webcom.slideshow($);
@@ -294,5 +325,7 @@ if (typeof jQuery != 'undefined'){
 		Generic.removeExtraGformStyles($);
 		Generic.mobileNavBar($);
 		Generic.PostTypeSearch($);
+		
+		mapWidgetResizing($);
 	});
 }else{console.log('jQuery dependancy failed to load');}

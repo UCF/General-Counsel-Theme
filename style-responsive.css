@@ -1,5 +1,7 @@
 @media (min-width: 1200px) {
 	.row-border-bottom-top { margin-left: 30px; }
+	
+	#contact.page-content iframe { width: 540px !important; height: 280px; }
 }
 
 @media (max-width: 979px) {
@@ -7,6 +9,8 @@
 	#UCFHBHeader div.UCFHBWrapper { width: 100%; }
 	
 	#footer .footer-widget-3 { width: 210px; margin-left: 100px; }
+	
+	#contact.page-content iframe { width: 322px !important; height: 175px !important; }
 }
 
 @media (max-width: 767px) {
@@ -74,6 +78,8 @@
 		border-left: 0;
 	}
 	
+	
+	#contact.page-content iframe { width: 92% !important; }
 	
 	#header-nav-wrap .menu.horizontal { float: left; }
 	#header-nav-wrap .menu.horizontal li:first-child { margin-left: 0; }
