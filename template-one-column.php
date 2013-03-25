@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<?
-	if(get_post_meta($post->ID, 'page_hide_fold', True) != 'on'): 
+	if(get_post_meta($post->ID, 'page_show_fold', True) == 'on'): 
 		get_template_part('includes/below-the-fold'); 
 	endif
 	?>

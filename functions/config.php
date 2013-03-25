@@ -104,7 +104,8 @@ Config::$custom_post_types = array(
 	'Page',
 	'Person',
 	'Post',
-	'FrequentlyAskedQuestion'
+	'FrequentlyAskedQuestion',
+	'Notice'
 );
 
 Config::$custom_taxonomies = array(
