@@ -8,12 +8,10 @@
 			<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Bottom Center')):?><?php endif;?>
 		</div>
 		<div class="span4" id="below-the-fold-right">
-			<?php if($options['enable_events']):?>
-				<?php display_events('h2')?>
-			<?php else:?>&nbsp;
-				<?php debug("Events feed is disabled.")?>
+			<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Bottom Right')):?>
+				<h2>Notices</h2>
+				<?=do_shortcode('[notice-list]')?>
 			<?php endif;?>
-			<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Bottom Right')):?><?php endif;?>
 		</div>
 	</div>
 </div>

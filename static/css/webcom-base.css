@@ -203,3 +203,13 @@ textarea{padding: 4px; color: #333; border: 1px solid #ccc; -webkit-border-radiu
 .pub .modal iframe { border: 0; overflow: hidden !important; }
 .pub .modal .btn { position: absolute; bottom:20px; right: 20px; z-index:9999; text-decoration: none; }
 .pub .modal .btn:hover { text-decoration: none; }
+
+ul.notice-list { list-style-type: none; }
+ul.notice-list li { margin-bottom: 4px; }
+ul.notice-list li.document { list-style-image: url('../img/documents-doc.png'); }
+ul.notice-list li.pdf { list-style-image: url('../img/documents-pdf.png'); }
+ul.notice-list li.zip { list-style-image: url('../img/documents-zip.png'); }
+ul.notice-list li.word { list-style-image: url('../img/documents-word.png'); }
+ul.notice-list li.excel { list-style-image: url('../img/documents-excel.png'); }
+ul.notice-list li.powerpoint { list-style-image: url('../img/documents-ppt.png'); }
+ul.notice-list li.html { list-style-image: url('../img/documents-html.png'); }
