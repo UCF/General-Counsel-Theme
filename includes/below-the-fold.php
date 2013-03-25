@@ -10,7 +10,7 @@
 		<div class="span4" id="below-the-fold-right">
 			<?php if(!function_exists('dynamic_sidebar') or !dynamic_sidebar('Bottom Right')):?>
 				<h2>Notices</h2>
-				<?=do_shortcode('[notice-list]')?>
+				<?=do_shortcode('[notice-list limit=5]')?>
 			<?php endif;?>
 		</div>
 	</div>
