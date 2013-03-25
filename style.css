@@ -23,12 +23,12 @@ Version: v0.0.0
 #below-the-fold { margin-top: 0; }
 #below-the-fold #below-the-fold-left { }
 #below-the-fold #below-the-fold-left p { margin-bottom: 20px; }
-#below-the-fold #below-the-fold-center p { font-family: 'Georgia', serif; font-size: 24px; font-style: italic; color: #2a2a2a; line-height: 32px; }
+#below-the-fold #below-the-fold-center p { font-family: 'Georgia', serif; font-size: 19px; font-style: italic; color: #2a2a2a; line-height: 32px; }
 #below-the-fold #below-the-fold-center p span { 
 	font-family: 'Helvetica', sans-serif; 
 	font-size: 80px; 
 	font-style: normal; 
-	line-height: 60px;
+	line-height: 80px;
 	display: block; 
 	height: 32px;
 	float: left; 
