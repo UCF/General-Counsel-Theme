@@ -136,40 +136,6 @@ Config::$theme_settings = array(
 			'value'       => $theme_options['ga_account'],
 		)),
 	),
-	'Events' => array(
-		new RadioField(array(
-			'name'        => 'Enable Events Below the Fold',
-			'id'          => THEME_OPTIONS_NAME.'[enable_events]',
-			'description' => 'Display events in the bottom page content, appearing on most pages.',
-			'default'     => 1,
-			'choices'     => array(
-				'On'  => 1,
-				'Off' => 0,
-			),
-			'value'       => $theme_options['enable_events'],
-		)),
-		new SelectField(array(
-			'name'        => 'Events Max Items',
-			'id'          => THEME_OPTIONS_NAME.'[events_max_items]',
-			'description' => 'Maximum number of events to display whenever outputting event information.',
-			'value'       => $theme_options['events_max_items'],
-			'default'     => 4,
-			'choices'     => array(
-				'1' => 1,
-				'2' => 2,
-				'3' => 3,
-				'4' => 4,
-				'5' => 5,
-			),
-		)),
-		new TextField(array(
-			'name'        => 'Events Calendar URL',
-			'id'          => THEME_OPTIONS_NAME.'[events_url]',
-			'description' => 'Base URL for the calendar you wish to use. Example: <em>http://events.ucf.edu/mycalendar</em>',
-			'value'       => $theme_options['events_url'],
-			'default'     => 'http://events.ucf.edu',
-		)),
-	),
 	'Contact Information' => array(
 		new TextField(array(
 			'name'        => 'Primary Contact Email',
