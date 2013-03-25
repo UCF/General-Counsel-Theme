@@ -220,4 +220,4 @@ ul.notice-list li.word { background: url('../img/documents-word.png') center rig
 ul.notice-list li.excel { background: url('../img/documents-excel.png') center right no-repeat; }
 ul.notice-list li.powerpoint { background: url('../img/documents-ppt.png') center right no-repeat; }
 ul.notice-list li.html { background: url('../img/documents-html.png') center right no-repeat; }
-ul.notice-list li a { display: block; width: 100%; }
+ul.notice-list li a { display: block; padding-right: 25px; }
