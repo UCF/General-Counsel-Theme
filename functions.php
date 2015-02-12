@@ -22,7 +22,7 @@ add_filter('widget_text', 'do_shortcode');
  * Intended for a single level of navigational elements (no
  * child links.)
  * Returns the nav list markup if successful.
- * 
+ *
  * @return string
  * @author Jo Greybill
  **/
@@ -32,27 +32,27 @@ function create_sidebar_nav($post_id) {
 	else {
 		$links = array();
 		$post_content = apply_filters('the_content', $post->post_content); // parse shortcodes
-		
-		if (!$post_content || $post_content == '') { return 'No post content found.'; } 
+
+		if (!$post_content || $post_content == '') { return 'No post content found.'; }
 		else {
-			
+
 			// Disable warnings for bad markup, because it's so prevalent
 			libxml_use_internal_errors(true);
 			// Use PHP DomDocument class to load up the post content
 			$dom 	= new DomDocument();
 			$dom->loadHtml($post_content);
-			
+
 			// Traverse the DOM and add each .title-sidebarnav's ID and value to the array of links
 			$xpath 	= new DomXPath($dom);
 			foreach ($xpath->query('//*[@class = "title-sidebarnav"]') as $element) {
 				foreach ($element->attributes as $attr) {
-					if ($attr->nodeName == 'id') { 
-						$links[$attr->nodeValue] .= $element->nodeValue; 
+					if ($attr->nodeName == 'id') {
+						$links[$attr->nodeValue] .= $element->nodeValue;
 					}
 				}
 			}
 		}
-		
+
 		if (empty($links)) { return 'No designated sidebar nav elements found in post content.'; }
 		else {
 			// Add anchor links to the stacked nav list based on the element ID's collected
@@ -61,7 +61,7 @@ function create_sidebar_nav($post_id) {
 				$output .= '<li><a href="#'.$link.'">'.$val.'<i class="icon-chevron-right pull-right"></i></a></li>';
 			}
 			$output .= '</ul>';
-			
+
 			// Finally, return html content for nav list:
 			return $output;
 		}
@@ -79,5 +79,38 @@ function add_id_to_ucfhb($url) {
     return $url;
 }
 add_filter('clean_url', 'add_id_to_ucfhb', 10, 3);
+
+
+/**
+ * Allow non-superusers to add various elements to post content
+ **/
+function kses_iframe_and_bs_elems() {
+    global $allowedposttags;
+
+    // allow iframes
+    $allowedposttags['iframe'] = array(
+		'type' => array(),
+    	'value' => array(),
+    	'id' => array(),
+    	'name' => array(),
+    	'class' => array(),
+    	'src' => array(),
+    	'height' => array(),
+    	'width' => array(),
+    	'allowfullscreen' => array(),
+    	'frameborder' => array()
+    );
+
+    // allow data-toggle and data-parent bootstrap attr's
+    $bs_tags = array( 'div', 'a', 'button' );
+    $bs_attrs = array( 'data-toggle' => array(), 'data-parent' => array() );
+
+    foreach ( $bs_tags as $tag ) {
+        if ( isset( $allowedposttags[ $tag ] ) && is_array( $allowedposttags[ $tag ] ) ) {
+            $allowedposttags[ $tag ] = array_merge( $allowedposttags[ $tag ], $bs_attrs );
+        }
+    }
+}
+add_action( 'init', 'kses_iframe_and_bs_elems' );
 
 ?>
