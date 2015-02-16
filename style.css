@@ -1,8 +1,8 @@
-/*   
+/*
 Theme Name: UCF General Counsel Theme
 Author: UCF Web Communications
 Github Theme URI: https://github.com/UCF/General-Counsel-Theme.git
-Version: v1.0.2
+Version: v1.0.3
 */
 
 /* Home/general styles */
@@ -24,15 +24,15 @@ Version: v1.0.2
 #below-the-fold #below-the-fold-left { }
 #below-the-fold #below-the-fold-left p { margin-bottom: 20px; }
 #below-the-fold #below-the-fold-center p { font-family: 'Georgia', serif; font-size: 19px; font-style: italic; color: #2a2a2a; line-height: 32px; }
-#below-the-fold #below-the-fold-center p span { 
-	font-family: 'Helvetica', sans-serif; 
-	font-size: 80px; 
-	font-style: normal; 
+#below-the-fold #below-the-fold-center p span {
+	font-family: 'Helvetica', sans-serif;
+	font-size: 80px;
+	font-style: normal;
 	line-height: 80px;
-	display: block; 
+	display: block;
 	height: 32px;
-	float: left; 
-	padding-right: 10px; 
+	float: left;
+	padding-right: 10px;
 	color: #ccc;
 }
 #below-the-fold-left, #below-the-fold-center, #below-the-fold-right { margin-bottom: 20px; }
@@ -55,8 +55,8 @@ Version: v1.0.2
 #footer .footer-widget-3 #contact-widget-phone:hover { background-position: -4px -51px; }
 #footer .footer-widget-3 #contact-widget-map { background-position: -73px 0; }
 #footer .footer-widget-3 #contact-widget-map:hover { background-position: -73px -51px; }
-#footer .footer-widget-3 #contact-widget-email { background-position: -143px 0; } 
-#footer .footer-widget-3 #contact-widget-email:hover { background-position: -143px -51px; } 
+#footer .footer-widget-3 #contact-widget-email { background-position: -143px 0; }
+#footer .footer-widget-3 #contact-widget-email:hover { background-position: -143px -51px; }
 
 #footer .footer-widget-3 .contact-widget-icon > a {
 	display: block;
@@ -84,8 +84,8 @@ Version: v1.0.2
 	cursor: default;
 	z-index: 3;
 }
-#footer .footer-widget-3 .contact-widget-icon:hover .contact-widget-bubble-wrap { 
-	opacity: 1; 
+#footer .footer-widget-3 .contact-widget-icon:hover .contact-widget-bubble-wrap {
+	opacity: 1;
 	visibility: visible;
 	width: 200px;
 	height: auto;
@@ -115,7 +115,7 @@ Version: v1.0.2
 	border-top: 5px solid #333;
 }
 
-#footer .footer-widget-3 .contact-widget-icon .contact-widget-bubble-wrap .contact-widget-bubble p { 
+#footer .footer-widget-3 .contact-widget-icon .contact-widget-bubble-wrap .contact-widget-bubble p {
 	opacity: 1;
 	color: #fff;
 	margin: 0;
